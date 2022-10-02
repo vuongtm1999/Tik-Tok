@@ -1,21 +1,18 @@
-@import 'normalize.css';
+@import "normalize.css";
 @import url('https://use.typekit.net/waz4tsx.css');
 
-:root {
-    --primary: rgba(254, 44, 85, 1);
 
-    // Default layout
-    --default-layout-header-height: 60px;
-    --default-layout-width: 1150px;
+
+
+:root{
+    --primary : rgba(254, 44, 85, 1);
 }
 
-* {
-    margin: 0;
-    padding: 0;
+*{
     box-sizing: border-box;
 }
 
-html {
+html{
     font-size: 62.5%;
 }
 
