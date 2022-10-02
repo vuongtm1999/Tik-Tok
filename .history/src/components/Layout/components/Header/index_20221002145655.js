@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import styles from './Header.module.scss';
+import styles from '~/Header.module.scss';
 import images from '~/assets/images';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark } from '@fortawesome/free-regular-svg-icons';
