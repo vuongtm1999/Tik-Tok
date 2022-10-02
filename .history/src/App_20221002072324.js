@@ -18,10 +18,9 @@ function App() {
                             let Layout = DefaultLayout;
                             if(route.layout){
                                 Layout = route.layout
-                            }else if(route.layout === null) {
-                                Layout = Fragment
+                            }else{
+                                Layout = <></>
                             }
-                            
                             return <Route path={route.path} key={index} 
                             element={
                                 <Layout>
