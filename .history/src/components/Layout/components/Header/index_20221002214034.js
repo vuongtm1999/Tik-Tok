@@ -20,7 +20,7 @@ function Header() {
 
     useEffect(() => {
         setTimeout(() => {
-            setSearchResult([]);
+            setSearchResult();
         }, 0);
     }, []);
 
