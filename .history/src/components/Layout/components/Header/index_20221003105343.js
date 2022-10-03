@@ -8,10 +8,11 @@ import 'tippy.js/dist/tippy.css';
 import { useEffect, useState } from 'react';
 
 import AccountItem from '~/components/AccountItem';
+import { Wrapper as PopperWrapper } from '~/components/Popper/Menu';
 import Menu from '~/components/Popper/Menu';
 import images from '~/assets/images';
 import Button from '~/components/Button';
-import { Wrapper as PopperWrapper } from '~/components/Popper';
+import { Wrapper } from '~/components/Popper';
 
 
 const cx = classNames.bind(styles);

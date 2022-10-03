@@ -56,12 +56,16 @@ function Button({
         large,
     });
 
-    // const CC = {
-    //     vuong: "ABC",
-    //     tran: "Tran"
-    // }
+    const CC = {
+        vuong: "ABC",
+        tran: "Tran"
+    }
 
-    // console.log(CC)
+    function test(tag , Object){
+        console.log(Object)
+    }
+
+    test("h1", CC)
 
     return (
         <Comp className={classes} {...props}>

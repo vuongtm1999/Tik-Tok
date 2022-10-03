@@ -56,15 +56,13 @@ function Button({
         large,
     });
 
-    // const CC = {
-    //     vuong: "ABC",
-    //     tran: "Tran"
-    // }
+    const CC = {
+        vuong: "ABC"
+    }
 
-    // console.log(CC)
-
+    console.log(...CC)
     return (
-        <Comp className={classes} {...props}>
+        <Comp className={classes} {...props} {...CC} >
             {leftIcon && <span className={cx('icon')}>{leftIcon}</span>}
             <span className={cx('title')}>{children}</span>
             {rightIcon && <span className={cx('icon')}>{rightIcon}</span>}
