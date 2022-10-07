@@ -11,13 +11,18 @@ const cx = classNames.bind(styles);
 const defaultFn = () => {};
 
 function Menu({ children, items = [], onChange = defaultFn }) {
-    const [history, setHistory] = useState([{ data: items }]);
+    let data = items
+    const [history, setHistory] = useState(data);
     const current = history[history.length - 1];
+
+    console.log("history", history)
+    console.log("current", current)
 
     const renderItems = () => {
         return current.data.map((item, index) => {
             // !!item.children => convert item.children to True or False
             const isParent = !!item.children;
+            console.log(isParent)
 
             return (
                 <MenuItem

@@ -18,6 +18,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
         return current.data.map((item, index) => {
             // !!item.children => convert item.children to True or False
             const isParent = !!item.children;
+            console.log(isParent)
 
             return (
                 <MenuItem

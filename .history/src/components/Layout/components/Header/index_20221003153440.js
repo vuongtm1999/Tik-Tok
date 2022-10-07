@@ -1,19 +1,10 @@
 import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faCircleQuestion,
-    faCircleXmark,
-    faKeyboard,
-} from '@fortawesome/free-regular-svg-icons';
-import {
-    faEarthAsia,
-    faEllipsisVertical,
-    faMagnifyingGlass,
-    faSpinner,
-} from '@fortawesome/free-solid-svg-icons';
+import { faCircleQuestion, faCircleXmark, faKeyboard } from '@fortawesome/free-regular-svg-icons';
+import { faEarthAsia, faEllipsisVertical, faMagnifyingGlass, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css';
+import 'tippy.js/dist/tippy.css'; 
 import { useEffect, useState } from 'react';
 
 import AccountItem from '~/components/AccountItem';
@@ -22,27 +13,13 @@ import images from '~/assets/images';
 import Button from '~/components/Button';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 
+
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
     {
         icon: <FontAwesomeIcon icon={faEarthAsia} />,
         title: 'English',
-        children: {
-            title: 'Language',
-            data: [
-                {
-                    type: 'language',
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    type: 'language',
-                    code: 'vi',
-                    title: 'Tiếng Việt',
-                },
-            ],
-        },
     },
     {
         icon: <FontAwesomeIcon icon={faCircleQuestion} />,
@@ -55,6 +32,8 @@ const MENU_ITEMS = [
     },
 ];
 
+
+
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
 
@@ -64,16 +43,6 @@ function Header() {
         }, 0);
     }, []);
 
-    // Handle logic
-    const handleMenuChange = (menuItem) => {
-        switch (menuItem.type) {
-            case 'language':
-                // Handle change language
-                break;
-            default:
-        }
-    };
-
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -82,13 +51,9 @@ function Header() {
                 </div>
                 <Tippy
                     interactive
-                    visible={searchResult.length > 0}
+                    visible
                     render={(attrs) => (
-                        <div
-                            className={cx('search-result')}
-                            tabIndex="-1"
-                            {...attrs}
-                        >
+                        <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                             <PopperWrapper>
                                 <h4 className={cx('search-title')}>Accounts</h4>
                                 <AccountItem />
@@ -100,17 +65,11 @@ function Header() {
                     )}
                 >
                     <div className={cx('search')}>
-                        <input
-                            placeholder="Search accounts and videos"
-                            spellCheck={false}
-                        />
+                        <input placeholder="Search accounts and videos" spellCheck={false} />
                         <button className={cx('clear')}>
                             <FontAwesomeIcon icon={faCircleXmark} />
                         </button>
-                        <FontAwesomeIcon
-                            className={cx('loading')}
-                            icon={faSpinner}
-                        />
+                        <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
 
                         <button className={cx('search-btn')}>
                             <FontAwesomeIcon icon={faMagnifyingGlass} />
@@ -122,7 +81,8 @@ function Header() {
                     <Button text>Upload</Button>
                     <Button primary>Log in</Button>
 
-                    <Menu onChange={handleMenuChange} items={MENU_ITEMS}>
+                    
+                    <Menu items={MENU_ITEMS}>
                         <button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />
                         </button>

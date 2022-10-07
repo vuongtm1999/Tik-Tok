@@ -11,28 +11,33 @@ const cx = classNames.bind(styles);
 const defaultFn = () => {};
 
 function Menu({ children, items = [], onChange = defaultFn }) {
-    const [history, setHistory] = useState([{ data: items }]);
+    let data = items
+    const [history, setHistory] = useState(data);
     const current = history[history.length - 1];
 
-    const renderItems = () => {
-        return current.data.map((item, index) => {
-            // !!item.children => convert item.children to True or False
-            const isParent = !!item.children;
+    console.log("history", history)
+    console.log("current", current)
 
-            return (
-                <MenuItem
-                    key={index}
-                    data={item}
-                    onClick={() => {
-                        if (isParent) {
-                            setHistory((prev) => [...prev, item.children]);
-                        } else {
-                            onChange(item);
-                        }
-                    }}
-                />
-            );
-        });
+    const renderItems = () => {
+        // return current.data.map((item, index) => {
+        //     // !!item.children => convert item.children to True or False
+        //     const isParent = !!item.children;
+        //     console.log(isParent)
+
+        //     return (
+        //         <MenuItem
+        //             key={index}
+        //             data={item}
+        //             onClick={() => {
+        //                 if (isParent) {
+        //                     setHistory((prev) => [...prev, item.children]);
+        //                 } else {
+        //                     onChange(item);
+        //                 }
+        //             }}
+        //         />
+        //     );
+        // });
     };
 
     return (
