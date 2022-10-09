@@ -188,7 +188,7 @@ function Header() {
                         {currentUser ? (
                             <Image
                                 className={cx('user-avatar')}
-                                src="https://scontent.fsgn2-7.fna.fbcdn.net/v/t39.30808-1/272766674_1125562458245688_913006108716950003_n.jpg?stp=c65.0.240.240a_dst-jpg_p240x240&_nc_cat=108&ccb=1-7&_nc_sid=7206a8&_nc_ohc=LLbiBy6DjtEAX9pnRCv&_nc_ht=scontent.fsgn2-7.fna&oh=00_AT_YLJ0j1FmuABnh29aiyevwAHNWfg-MgN2_Y-ckhyYklw&oe=63481C44"
+                                src="https://files.fullstack.edu.vn/f8-prod/user_avatars/1/623d4b2d95cec.png"
                                 alt="Nguyen Van A"
                             />
                         ) : (

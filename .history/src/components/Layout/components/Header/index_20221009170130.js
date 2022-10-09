@@ -24,7 +24,6 @@ import images from '~/assets/images';
 import Button from '~/components/Button';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import { InboxIcon, MessageIcon, SearchIcon, UploadIcon } from '~/components/Icon';
-import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
@@ -186,9 +185,9 @@ function Header() {
                         onChange={handleMenuChange}
                     >
                         {currentUser ? (
-                            <Image
+                            <img
                                 className={cx('user-avatar')}
-                                src="https://scontent.fsgn2-7.fna.fbcdn.net/v/t39.30808-1/272766674_1125562458245688_913006108716950003_n.jpg?stp=c65.0.240.240a_dst-jpg_p240x240&_nc_cat=108&ccb=1-7&_nc_sid=7206a8&_nc_ohc=LLbiBy6DjtEAX9pnRCv&_nc_ht=scontent.fsgn2-7.fna&oh=00_AT_YLJ0j1FmuABnh29aiyevwAHNWfg-MgN2_Y-ckhyYklw&oe=63481C44"
+                                src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/ea0854578085ab26effc2c7b8cefa270~c5_100x100.jpeg?x-expires=1651658400&x-signature=zeUCDyTxctGYZ5%2Bsh422klviXFE%3D"
                                 alt="Nguyen Van A"
                             />
                         ) : (
