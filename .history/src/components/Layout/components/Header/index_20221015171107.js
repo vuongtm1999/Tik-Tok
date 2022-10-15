@@ -130,7 +130,7 @@ function Header() {
                         {currentUser ? (
                             <Image
                                 className={cx('user-avatar')}
-                                src="https://scontent.fsgn2-7.fna.fbcdn.net/v/t39.30808-6/272766674_1125562458245688_913006108716950003_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=aWnOKxUyGfwAX9cdtee&_nc_ht=scontent.fsgn2-7.fna&oh=00_AT_44bArR1fCGU-BcNu7qDC0pU-nb1ZnS6bCgLX20KAY6w&oe=634FA606"
+                                src="https://files.fullstack.edu.vn/f8-prod/user_avatars/1/623d4b2d95cec.png"
                                 alt="Tran Minh Vuong"
                             />
                         ) : (
