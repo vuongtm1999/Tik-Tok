@@ -22,14 +22,14 @@ function Search() {
     const inputRef = useRef();
 
     useEffect(() => {
-        if (!debounced.trim()) {
+        if (!searchValue.trim()) {
             setSearchResult([]);
             return;
         }
 
         setLoading(true);
 
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounced)}&type=less`)
+        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(searchValue)}&type=less`)
             .then((res) => res.json())
             .then((res) => {
                 setSearchResult(res.data);
@@ -38,7 +38,7 @@ function Search() {
             .catch(() => {
                 setLoading(false);
             });
-    }, [debounced]);
+    }, [searchValue]);
 
     const handleClear = () => {
         setSearchValue('');

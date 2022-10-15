@@ -38,7 +38,7 @@ function Search() {
             .catch(() => {
                 setLoading(false);
             });
-    }, [debounced]);
+    }, [searchValue]);
 
     const handleClear = () => {
         setSearchValue('');
