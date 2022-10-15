@@ -37,8 +37,6 @@ function Search() {
             setSearchResult(result);
             setLoading(false);
         };
-
-        fetchApi();
     }, [debounced]);
 
     const handleClear = () => {
