@@ -1,25 +1,29 @@
 import classNames from 'classnames/bind';
+import styles from './Header.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faCircleQuestion,
+    faCircleXmark,
     faCoins,
     faEarthAsia,
     faEllipsisVertical,
     faGear,
     faKeyboard,
     faSignOut,
+    faSpinner,
     faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react';
+import HeadlessTippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
+import { useEffect, useState } from 'react';
 
-import Button from '~/components/Button';
-import styles from './Header.module.scss';
-import images from '~/assets/images';
 import Menu from '~/components/Popper/Menu';
-import { InboxIcon, MessageIcon, UploadIcon } from '~/components/Icons';
+import images from '~/assets/images';
+import Button from '~/components/Button';
 import Image from '~/components/Image';
 import Search from '../Search';
+import { UploadIcon } from '~/components/Icon';
 
 const cx = classNames.bind(styles);
 
@@ -55,7 +59,14 @@ const MENU_ITEMS = [
 ];
 
 function Header() {
+    const [searchResult, setSearchResult] = useState([]);
     const currentUser = true;
+
+    useEffect(() => {
+        setTimeout(() => {
+            setSearchResult([]);
+        }, 0);
+    }, []);
 
     // Handle logic
     const handleMenuChange = (menuItem) => {
@@ -95,23 +106,31 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <img src={images.logo} alt="Tiktok" />
+                <div className={cx('logo')}>
+                    <img src={images.logo} alt="Tiktok" />
+                </div>
 
                 <Search />
 
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <>
-                            <Tippy delay={[0, 50]} content="Upload video" placement="bottom">
+                            <Tippy
+                                delay={[0, 50]}
+                                content="Upload video"
+                                placement="bottom"
+                            >
                                 <button className={cx('action-btn')}>
                                     <UploadIcon />
                                 </button>
                             </Tippy>
+
                             <Tippy delay={[0, 50]} content="Message" placement="bottom">
                                 <button className={cx('action-btn')}>
                                     <MessageIcon />
                                 </button>
                             </Tippy>
+
                             <Tippy delay={[0, 50]} content="Inbox" placement="bottom">
                                 <button className={cx('action-btn')}>
                                     <InboxIcon />
@@ -126,11 +145,14 @@ function Header() {
                         </>
                     )}
 
-                    <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
+                    <Menu
+                        items={currentUser ? userMenu : MENU_ITEMS}
+                        onChange={handleMenuChange}
+                    >
                         {currentUser ? (
                             <Image
                                 className={cx('user-avatar')}
-                                src="https://files.fullstack.edu.vn/f8-prod/user_avatars/1/623d4b2d95cec.png"
+                                src="https://scontent.fsgn2-7.fna.fbcdn.net/v/t39.30808-1/272766674_1125562458245688_913006108716950003_n.jpg?stp=c65.0.240.240a_dst-jpg_p240x240&_nc_cat=108&ccb=1-7&_nc_sid=7206a8&_nc_ohc=LLbiBy6DjtEAX9pnRCv&_nc_ht=scontent.fsgn2-7.fna&oh=00_AT_YLJ0j1FmuABnh29aiyevwAHNWfg-MgN2_Y-ckhyYklw&oe=63481C44"
                                 alt="Nguyen Van A"
                             />
                         ) : (
