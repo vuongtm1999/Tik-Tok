@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { publicRoutes } from "~/routes/index.js";
 import GlobalStyles from "./components/Globalstyles";
 import { Fragment } from "react";
-import MainLayout from "./layouts";
+import { DefaultLayout } from "./layouts";
 
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
                         publicRoutes.map((route, index) => {
                             const Page = route.component
 
-                            let Layout = MainLayout;
+                            let Layout = DefaultLayout;
                             if(route.layout){
                                 Layout = route.layout
                             }else if(route.layout === null) {

@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { publicRoutes } from "~/routes/index.js";
 import GlobalStyles from "./components/Globalstyles";
 import { Fragment } from "react";
-import MainLayout from "./layouts";
+import { MainLayout } from "./layouts";
 
 
 function App() {
