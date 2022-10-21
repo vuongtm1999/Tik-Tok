@@ -26,7 +26,6 @@ function Menu({ children, items = [],  hideOnClick = false,  onChange = defaultF
                     data={item}
                     onClick={() => {
                         if (isParent) {
-                            // good ideal
                             setHistory((prev) => [...prev, item.children]);
                         } else {
                             onChange(item);
@@ -35,24 +34,6 @@ function Menu({ children, items = [],  hideOnClick = false,  onChange = defaultF
                 />
             );
         });
-    };
-
-    const handleBack = () => {
-        setHistory((prev) => prev.slice(0, prev.length - 1));
-    };
-
-    const renderResult = (attrs) => (
-        <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
-            <PopperWrapper className={cx('menu-popper')}>
-                {history.length > 1 && <Header title={current.title} onBack={handleBack} />}
-                <div className={cx('menu-body')}>{renderItems()}</div>
-            </PopperWrapper>
-        </div>
-    );
-
-    // Reset to first page
-    const handleReset = () => {
-        setHistory((prev) => prev.slice(0, 1));
     };
 
     return (
