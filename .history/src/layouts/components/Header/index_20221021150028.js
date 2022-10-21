@@ -13,6 +13,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import PropTypes from 'prop-types';
 
 import config from '~/config';
 import Button from '~/components/Button';

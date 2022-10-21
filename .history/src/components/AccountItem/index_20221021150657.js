@@ -23,8 +23,4 @@ function AccountItem({ data }) {
     );
 }
 
-PropTypes.PropTypes = {
-    data: PropTypes.object.isRequired,
-}
-
 export default AccountItem;

@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 
 const cx = classNames.bind(styles);
 
-function Wrapper({ children, className }) {
-    return <div className={cx('wrapper', className)}>{children}</div>;
+function Wrapper({ children }) {
+    return <div className={cx('wrapper')}>{children}</div>;
 }
 
-Wrapper.propTypes = {
+Wrapper.prototype = {
     children: PropTypes.node.isRequired,
     className: PropTypes.string,
 };

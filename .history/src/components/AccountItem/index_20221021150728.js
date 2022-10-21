@@ -24,7 +24,7 @@ function AccountItem({ data }) {
 }
 
 PropTypes.PropTypes = {
-    data: PropTypes.object.isRequired,
+    data: PropTypes.object,
 }
 
 export default AccountItem;
