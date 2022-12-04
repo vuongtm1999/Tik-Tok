@@ -1,12 +1,11 @@
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react/headless';
-
+import { Wrapper as PopperWrapper } from '~/components/Popper';
 import MenuItem from './MenuItem';
 import Header from './Header';
 import styles from './Menu.module.scss';
 import { useState } from 'react';
 import PropTypes from 'prop-types'
-import Popper from '../Wrapper';
 
 const cx = classNames.bind(styles);
 
@@ -42,12 +41,12 @@ function Menu({ children, items = [],  hideOnClick = false,  onChange = defaultF
         setHistory((prev) => prev.slice(0, prev.length - 1));
     };
 
-    const renderResult = (attrs) => (
-        <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
-            <Popper className={cx('menu-popper')}>
+    const renderResult = () => (
+        <div className={cx('menu-list')} tabIndex="-1" >
+            <PopperWrapper className={cx('menu-popper')}>
                 {history.length > 1 && <Header title={current.title} onBack={handleBack} />}
                 <div className={cx('menu-body')}>{renderItems()}</div>
-            </Popper>
+            </PopperWrapper>
         </div>
     );
 
